@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy — Mailer by Axioma</title>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+
+<p>
+  This Privacy Policy describes how Mailer by Axioma ("the Application")
+  accesses, uses, stores, and protects user data.
+</p>
+
+<h2>1. Application Overview</h2>
+<p>
+  Mailer by Axioma is a Telegram-based email automation tool that allows users
+  to send emails from their own Google accounts using the Gmail API.
+</p>
+
+<h2>2. Google User Data Accessed</h2>
+<p>
+  The Application accesses the following Google user data via Google OAuth 2.0:
+</p>
+
+<ul>
+  <li>
+    <strong>Gmail API (https://www.googleapis.com/auth/gmail.send)</strong><br>
+    Used solely to send emails on behalf of the authenticated user.
+    The Application does not read, access, or analyze incoming emails,
+    attachments, or mailbox contents.
+  </li>
+
+  <li>
+    <strong>Google Drive API (https://www.googleapis.com/auth/drive.file)</strong><br>
+    Used only to access a spreadsheet file explicitly provided by the user,
+    containing email recipient addresses for an email campaign.
+    The Application does not access or analyze any other files on the user's Google Drive.
+  </li>
+</ul>
+
+<h2>3. Data Provided Directly by the User</h2>
+<ul>
+  <li>Telegram user ID and username</li>
+  <li>Email campaign content (subject and message body)</li>
+  <li>Email recipient list (provided via a Google Spreadsheet)</li>
+</ul>
+
+<h2>4. How Data Is Used</h2>
+<p>
+  User data is used exclusively to provide the core functionality of the Application,
+  which is sending email campaigns on behalf of the user.
+</p>
+
+<ul>
+  <li>Email content is used to send messages via the Gmail API</li>
+  <li>Recipient lists are processed temporarily to complete a mailing campaign</li>
+  <li>Email campaign history (subject and message body) is stored to allow users
+      to review previous campaigns</li>
+</ul>
+
+<h2>5. Data Storage and Security</h2>
+<p>
+  OAuth access and refresh tokens are stored securely in an encrypted form
+  using industry-standard encryption methods.
+  Encryption keys are stored separately using environment variables.
+</p>
+
+<p>
+  Email recipient lists are downloaded temporarily to the server only for the duration
+  of an active mailing process and are permanently deleted immediately after the campaign
+  is completed.
+</p>
+
+<p>
+  Email campaign history (email subject and message body) is stored in a secure database
+  and remains stored until user data is removed.
+</p>
+
+<h2>6. Data Sharing</h2>
+<p>
+  The Application does not sell, rent, or share Google user data with third parties.
+  Data is used strictly to provide the Application’s functionality.
+</p>
+
+<h2>7. Data Retention and Deletion</h2>
+<p>
+  OAuth tokens remain stored until the user revokes access to the Application.
+  Users can revoke access at any time through their Google Account permissions page:
+</p>
+
+<p>
+  <a href="https://myaccount.google.com/permissions" target="_blank">
+    https://myaccount.google.com/permissions
+  </a>
+</p>
+
+<p>
+  Once access is revoked, the stored OAuth tokens become invalid and can no longer
+  be used to access Google services.
+</p>
+
+<h2>8. User Control</h2>
+<p>
+  Users have full control over their Google account permissions and can revoke
+  the Application’s access at any time through Google Account settings.
+</p>
+
+<h2>9. Contact Information</h2>
+<p>
+  If you have any questions about this Privacy Policy or data usage,
+  please contact:
+</p>
+
+<p>
+  <strong>Email:</strong> support@axxxioma.space
+</p>
+
+<p>
+  <strong>Application Name:</strong> Mailer by Axioma
+</p>
+
+</body>
+</html>
