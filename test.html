@@ -1,114 +1,152 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Видео фон</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
-        .video-background {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .video-background video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            text-align: center;
-            padding-top: 40vh;
-        }
-
-        .content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .content p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .content h1 {
-                font-size: 2rem;
-            }
-            
-            .content p {
-                font-size: 1rem;
-                padding: 0 20px;
-            }
-            
-            .video-background {
-                height: 70vh;
-            }
-        }
-    </style>
+    <title>Mailer by Axioma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="video-background">
-        <video autoplay muted loop playsinline>
-            <source src="upscaled_axioma_flow_background_slow.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео тег.
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-    
-    <!-- Дополнительный контент сайта -->
-    <div style="height: 2000px; padding: 50px; background: #f5f5f5;">
-        <h2>Остальной контент сайта</h2>
-        <p>Здесь идет остальной контент вашей страницы...</p>
-    </div>
+    <!-- Video Header -->
+    <header class="video-header">
+        <!-- First frame (immediate load) -->
+        <div class="first-frame-container">
+            <picture>
+                <source 
+                    srcset="video/first-frame.webp, 
+                            video/first-frame@2x.webp 2x"
+                    type="image/webp">
+                <source 
+                    srcset="video/first-frame.jpg, 
+                            video/first-frame@2x.jpg 2x"
+                    type="image/jpeg">
+                <img 
+                    class="first-frame"
+                    src="video/first-frame.jpg" 
+                    alt=""
+                    loading="eager"
+                    decoding="sync">
+            </picture>
+        </div>
 
-    <script>
-        // Дополнительный JavaScript для улучшения работы видео
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.querySelector('.video-background video');
+        <!-- Video for desktop -->
+        <video 
+            class="video-background desktop"
+            preload="auto"
+            muted
+            loop
+            playsinline
+            disablePictureInPicture>
+            <source src="video/video-background-desktop.mp4" type="video/mp4">
+        </video>
+
+        <!-- Video for mobile -->
+        <video 
+            class="video-background mobile"
+            preload="auto"
+            muted
+            loop
+            playsinline
+            disablePictureInPicture>
+            <source src="video/video-background-mobile.mp4" type="video/mp4">
+        </video>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <h1 class="title">
+                <img src="icons/envelope.svg" class="icon-title" alt="">
+                Mailer by Axioma
+            </h1>
             
-            // Предзагрузка видео
-            video.preload = 'auto';
-            
-            // Управление воспроизведением для мобильных устройств
-            function handleVideoPlayback() {
-                if (window.innerWidth <= 768) {
-                    video.setAttribute('playsinline', '');
-                    video.setAttribute('muted', '');
-                    video.setAttribute('autoplay', '');
-                }
-            }
-            
-            // Вызов при загрузке и изменении размера
-            handleVideoPlayback();
-            window.addEventListener('resize', handleVideoPlayback);
-        });
-    </script>
+            <p class="lead">
+                Mailer by Axioma is a Telegram-based application that helps users automate email outreach
+                by sending emails directly from their own Google accounts.
+            </p>
+
+            <p>
+                The application is designed for individual users such as music producers, beatmakers,
+                and other creators who need a simple way to manage and send email campaigns.
+            </p>
+
+            <p>
+                Mailer by Axioma uses Google OAuth 2.0 and the Gmail API. Emails are sent strictly on behalf
+                of the authenticated user and only after explicit user authorization.
+            </p>
+
+            <div class="section-divider"></div>
+
+            <h2 class="section-title">
+                <img src="icons/star.svg" class="icon-section" alt="">
+                Key Features
+            </h2>
+            <ul class="features">
+                <li>
+                    <img src="icons/check.svg" class="icon-check" alt="">
+                    Send emails from your own Gmail account
+                </li>
+                <li>
+                    <img src="icons/check.svg" class="icon-check" alt="">
+                    No access to incoming emails
+                </li>
+                <li>
+                    <img src="icons/check.svg" class="icon-check" alt="">
+                    No reading or analysis of private messages
+                </li>
+                <li>
+                    <img src="icons/check.svg" class="icon-check" alt="">
+                    Recipient lists are processed temporarily and never stored
+                </li>
+            </ul>
+
+            <div class="section-divider"></div>
+
+            <h2 class="section-title">
+                <img src="icons/shield.svg" class="icon-section" alt="">
+                Privacy
+            </h2>
+            <p>
+                User privacy and data security are a top priority.
+                For detailed information about how data is accessed, used, and protected,
+                please review our Privacy Policy.
+            </p>
+
+            <a href="/privacy.html" class="privacy-link">
+                <img src="icons/document.svg" class="icon-link" alt="">
+                Privacy Policy
+            </a>
+
+            <div class="section-divider"></div>
+
+            <h2 class="section-title">
+                <img src="icons/envelope.svg" class="icon-section" alt="">
+                Contact
+            </h2>
+            <p>
+                If you have any questions about the application or data usage,
+                you can contact us at:
+            </p>
+
+            <div class="contact-info">
+                <img src="icons/envelope.svg" class="icon-contact" alt="">
+                <strong>Email:</strong> support@axxxioma.space
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <footer class="site-footer">
+                <p class="copyright">
+                    <img src="icons/copyright.svg" class="icon-copyright" alt="">
+                    2024 Mailer by Axioma. All rights reserved.
+                </p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

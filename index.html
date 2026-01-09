@@ -1,57 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mailer by Axioma</title>
-  <meta name="description" content="Mailer by Axioma is a Telegram-based email automation tool that allows users to send emails from their own Google accounts using Gmail API.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailer by Axioma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Удалена строка с Font Awesome -->
 </head>
 <body>
+    <!-- Удален SVG Sprite, так как будем использовать отдельные файлы -->
 
-  <h1>Mailer by Axioma</h1>
+    <!-- Video Header -->
+    <header class="video-header">
+        <!-- First frame (immediate load) -->
+        <div class="first-frame-container">
+            <picture>
+                <source 
+                    srcset="video/first-frame.webp, 
+                            video/first-frame@2x.webp 2x"
+                    type="image/webp">
+                <source 
+                    srcset="video/first-frame.jpg, 
+                            video/first-frame@2x.jpg 2x"
+                    type="image/jpeg">
+                <img 
+                    class="first-frame"
+                    src="video/first-frame.jpg" 
+                    alt=""
+                    loading="eager"
+                    decoding="sync">
+            </picture>
+        </div>
 
-  <p>
-    Mailer by Axioma is a Telegram-based application that helps users automate email outreach
-    by sending emails directly from their own Google accounts.
-  </p>
+        <!-- Video for desktop -->
+        <video 
+            class="video-background desktop"
+            preload="auto"
+            muted
+            loop
+            playsinline
+            disablePictureInPicture>
+            <source src="video/video-background-desktop.mp4" type="video/mp4">
+        </video>
 
-  <p>
-    The application is designed for individual users such as music producers, beatmakers,
-    and other creators who need a simple way to manage and send email campaigns.
-  </p>
+        <!-- Video for mobile -->
+        <video 
+            class="video-background mobile"
+            preload="auto"
+            muted
+            loop
+            playsinline
+            disablePictureInPicture>
+            <source src="video/video-background-mobile.mp4" type="video/mp4">
+        </video>
+    </header>
 
-  <p>
-    Mailer by Axioma uses Google OAuth 2.0 and the Gmail API. Emails are sent strictly on behalf
-    of the authenticated user and only after explicit user authorization.
-  </p>
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <h1 class="title">
+                <img src="icons/envelope.svg" class="icon-title" alt="">
+                Mailer by Axioma
+            </h1>
+            
+            <p class="lead">
+                Mailer by Axioma is a Telegram-based application that helps users automate email outreach
+                by sending emails directly from their own Google accounts.
+            </p>
 
-  <h2>Key Features</h2>
-  <ul>
-    <li>Send emails from your own Gmail account</li>
-    <li>No access to incoming emails</li>
-    <li>No reading or analysis of private messages</li>
-    <li>Recipient lists are processed temporarily and never stored</li>
-  </ul>
+            <p>
+                The application is designed for individual users such as music producers, beatmakers,
+                and other creators who need a simple way to manage and send email campaigns.
+            </p>
 
-  <h2>Privacy</h2>
-  <p>
-    User privacy and data security are a top priority.
-    For detailed information about how data is accessed, used, and protected,
-    please review our Privacy Policy.
-  </p>
+            <p>
+                Mailer by Axioma uses Google OAuth 2.0 and the Gmail API. Emails are sent strictly on behalf
+                of the authenticated user and only after explicit user authorization.
+            </p>
 
-  <p>
-    <a href="/privacy.html">Privacy Policy</a>
-  </p>
+            <div class="section-divider"></div>
 
-  <h2>Contact</h2>
-  <p>
-    If you have any questions about the application or data usage,
-    you can contact us at:
-  </p>
+            <h2 class="section-title">
+                <img src="icons/star.svg" class="icon-section" alt="">
+                Key Features
+            </h2>
+            <ul class="features">
+                <li>
+                    <img src="icons/check.svg" class="icon-check" alt="">
+                    Send emails from your own Gmail account
+                </li>
+                <li>
+                    <img src="icons/check.svg" class="icon-check" alt="">
+                    No access to incoming emails
+                </li>
+                <li>
+                    <img src="icons/check.svg" class="icon-check" alt="">
+                    No reading or analysis of private messages
+                </li>
+                <li>
+                    <img src="icons/check.svg" class="icon-check" alt="">
+                    Recipient lists are processed temporarily and never stored
+                </li>
+            </ul>
 
-  <p>
-    <strong>Email:</strong> support@axxxioma.space
-  </p>
+            <div class="section-divider"></div>
 
+            <h2 class="section-title">
+                <img src="icons/shield.svg" class="icon-section" alt="">
+                Privacy
+            </h2>
+            <p>
+                User privacy and data security are a top priority.
+                For detailed information about how data is accessed, used, and protected,
+                please review our Privacy Policy.
+            </p>
+
+            <a href="privacy.html" class="privacy-link">
+                <img src="icons/document.svg" class="icon-link" alt="">
+                Privacy Policy
+            </a>
+
+            <div class="section-divider"></div>
+
+            <h2 class="section-title">
+                <img src="icons/envelope.svg" class="icon-section" alt="">
+                Contact
+            </h2>
+            <p>
+                If you have any questions about the application or data usage,
+                you can contact us at:
+            </p>
+
+            <div class="contact-info">
+                <img src="icons/envelope.svg" class="icon-contact" alt="">
+                <strong>Email:</strong> support@axxxioma.space
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <footer class="site-footer">
+                <p class="copyright">
+                    <img src="icons/copyright.svg" class="icon-copyright" alt="">
+                    2024 Mailer by Axioma. All rights reserved.
+                </p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
