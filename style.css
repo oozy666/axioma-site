@@ -138,24 +138,24 @@ p {
 
 /* Icons */
 .icon-title {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.75rem;
+    height: 3.75rem;
     margin-right: 1rem;
     vertical-align: middle;
     opacity: 0.9;
 }
 
 .icon-section {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.875rem;
+    height: 1.875rem;
     margin-right: 0.75rem;
     vertical-align: middle;
     opacity: 0.8;
 }
 
 .icon-check {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 1.35rem;
+    height: 1.35rem;
     position: absolute;
     left: 0;
     top: 0.15rem;
@@ -163,21 +163,21 @@ p {
 }
 
 .icon-link {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     margin-right: 0.5rem;
     vertical-align: middle;
 }
 
 .icon-contact {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.875rem;
+    height: 1.875rem;
     opacity: 0.8;
 }
 
 .icon-copyright {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 1.35rem;
+    height: 1.35rem;
     margin-right: 0.5rem;
     opacity: 0.7;
     vertical-align: middle;
@@ -280,8 +280,8 @@ p {
     }
     
     .icon-title {
-        width: 1.75rem;
-        height: 1.75rem;
+        width: 2.625rem;
+        height: 2.625rem;
         margin-right: 0.75rem;
     }
 }
@@ -347,170 +347,5 @@ button:focus {
     }
 }
 
-/* ... существующие стили ... */
-
-/* Icons */
-.icon-title {
-    width: 1.5em; /* 1.5 раза больше размера шрифта заголовка */
-    height: 1.5em;
-    margin-right: 0.5em;
-    vertical-align: middle;
-    opacity: 0.9;
-}
-
-.icon-section {
-    width: 0.8em; /* 0.8 размера шрифта подзаголовка */
-    height: 0.8em;
-    margin-right: 0.4em;
-    vertical-align: middle;
-    opacity: 0.8;
-}
-
-.icon-check {
-    width: 0.8em; /* 0.8 размера шрифта пункта списка */
-    height: 0.8em;
-    position: absolute;
-    left: 0;
-    top: 0.2em;
-    color: #000000;
-}
-
-.icon-link {
-    width: 1em; /* такой же размер как шрифт ссылки */
-    height: 1em;
-    margin-right: 0.5em;
-    vertical-align: middle;
-}
-
-.icon-contact {
-    width: 1em; /* такой же размер как шрифт контакта */
-    height: 1em;
-    opacity: 0.8;
-}
-
-.icon-copyright {
-    width: 0.9em; /* 0.9 размера шрифта копирайта */
-    height: 0.9em;
-    margin-right: 0.3em;
-    opacity: 0.7;
-    vertical-align: middle;
-}
-
-/* Иконки для Privacy Policy */
-.data-icon {
-    width: 1.1em;
-    height: 1.1em;
-    opacity: 0.8;
-}
-
-.security-icon {
-    width: 1.1em;
-    height: 1.1em;
-    opacity: 0.8;
-    margin-top: 0.25em;
-}
-
-.link-icon {
-    width: 0.85em;
-    height: 0.85em;
-    opacity: 0.7;
-}
-
-.icon-back {
-    width: 1em;
-    height: 1em;
-}
-
-.icon-arrow {
-    width: 0.8em;
-    height: 0.8em;
-    margin-right: 0.5em;
-}
-
-.contact-icon {
-    width: 1.1em;
-    height: 1.1em;
-    opacity: 0.8;
-}
-
-/* Убедитесь, что изображения правильно масштабируются */
-.icon-title img,
-.icon-section img,
-.icon-check img,
-.icon-link img,
-.icon-contact img,
-.icon-copyright img,
-.data-icon img,
-.security-icon img,
-.link-icon img,
-.icon-back img,
-.icon-arrow img,
-.contact-icon img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* ... остальные стили ... */
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .video-header {
-        height: 60vh;
-    }
-    
-    .video-background.desktop {
-        display: none;
-    }
-    
-    .video-background.mobile {
-        display: block;
-    }
-    
-    .content {
-        padding: 3rem 1.5rem;
-    }
-    
-    .title {
-        font-size: 2.5rem;
-    }
-    
-    .lead {
-        font-size: 1.125rem;
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .features li {
-        padding-left: 1.75rem;
-    }
-    
-    /* Иконки адаптируются автоматически через em */
-}
-
-@media (max-width: 480px) {
-    .video-header {
-        height: 50vh;
-    }
-    
-    .content {
-        padding: 2rem 1rem;
-    }
-    
-    .title {
-        font-size: 2rem;
-    }
-    
-    .contact-info {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    
-    /* Иконки адаптируются автоматически через em */
-}
 
 /* ... остальные стили ... */
