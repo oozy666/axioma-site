@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Normalizer</title>
+</head>
+
+<body>
+    <h1>SVG Normalizer Tool</h1>
+    <div id="container"></div>
+    <script>
+        const fileNames = [
+            "arrow-left.svg", "blob.svg", "box.svg", "check.svg", "clock.svg",
+            "copyright.svg", "database.svg", "document.svg", "envelope.svg",
+            "external-link.svg", "info.svg", "lock.svg", "settings.svg",
+            "share.svg", "shield.svg", "slider.svg", "star.svg", "trash.svg", "user.svg"
+        ];
+
+        async function processAll() {
+            const results = {};
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+            const getTightBBox = (src) => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.crossOrigin = "Anonymous"; // Just in case, though local
+                    img.onload = () => {
+                        const w = img.naturalWidth;
+                        const h = img.naturalHeight;
+                        canvas.width = w;
+                        canvas.height = h;
+                        ctx.clearRect(0, 0, w, h);
+                        ctx.drawImage(img, 0, 0);
+
+                        try {
+                            const imgData = ctx.getImageData(0, 0, w, h);
+                            const data = imgData.data;
+                            let minX = w, minY = h, maxX = 0, maxY = 0;
+                            let found = false;
+
+                            for (let y = 0; y < h; y++) {
+                                for (let x = 0; x < w; x++) {
+                                    const alpha = data[(y * w + x) * 4 + 3];
+                                    if (alpha > 0) { // Non-transparent
+                                        if (x < minX) minX = x;
+                                        if (x > maxX) maxX = x;
+                                        if (y < minY) minY = y;
+                                        if (y > maxY) maxY = y;
+                                        found = true;
+                                    }
+                                }
+                            }
+
+                            if (!found) {
+                                // Empty image? Default to full size
+                                resolve({ x: 0, y: 0, width: w, height: h, isEmpty: true });
+                            } else {
+                                // Add small padding (e.g. 1px) to avoid clipping anti-aliasing?
+                                // User said "tightly fit". Exact bounds is best.
+                                resolve({
+                                    x: minX,
+                                    y: minY,
+                                    width: maxX - minX + 1,
+                                    height: maxY - minY + 1,
+                                    originalWidth: w,
+                                    originalHeight: h
+                                });
+                            }
+                        } catch (e) {
+                            reject(e);
+                        }
+                    };
+                    img.onerror = () => reject(new Error("Image load failed"));
+                    img.src = src;
+                });
+            };
+
+            for (const name of fileNames) {
+                try {
+                    const response = await fetch('/icons/' + name);
+                    const text = await response.text();
+                    const match = text.match(/<image[^>]+href=["'](data:[^"']+)["']/);
+                    const matchXlink = text.match(/<image[^>]+xlink:href=["'](data:[^"']+)["']/);
+                    const href = (match && match[1]) || (matchXlink && matchXlink[1]);
+
+                    if (href) {
+                        const bbox = await getTightBBox(href);
+                        results[name] = bbox;
+                        console.log(`Processed ${name}: ${bbox.width}x${bbox.height} at ${bbox.x},${bbox.y}`);
+                    } else {
+                        results[name] = { error: "No image href found" };
+                    }
+                } catch (e) {
+                    console.error(`Error processing ${name}:`, e);
+                    results[name] = { error: e.message };
+                }
+            }
+
+            const resDiv = document.createElement('div');
+            resDiv.id = 'results';
+            resDiv.textContent = JSON.stringify(results);
+            document.body.appendChild(resDiv);
+
+            const doneDiv = document.createElement('div');
+            doneDiv.id = 'done';
+            doneDiv.textContent = 'DONE';
+            document.body.appendChild(doneDiv);
+        }
+
+        setTimeout(processAll, 100);
+    </script>
+</body>
+
+</html>

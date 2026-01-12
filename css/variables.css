@@ -1,0 +1,27 @@
+:root {
+    /* Global Scale Multipliers */
+    --icon-scale: 2.6;
+    --icon-lift: 3px;
+
+    /* Colors */
+    --color-primary: #000000;
+    --color-text: #444444;
+    --color-text-dark: #333333;
+    --color-bg: #ffffff;
+    --color-bg-secondary: #fafafa;
+    --color-border: #e0e0e0;
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+
+    /* Icon Sizes (Base sizes) */
+    --icon-size-title: 2.5rem;
+    --icon-size-section: 1.25rem;
+    --icon-size-check: 0.9rem;
+    --icon-size-link: 1rem;
+    --icon-size-contact: 1.25rem;
+    --icon-size-copyright: 0.9rem;
+
+    /* Inversion */
+    --inversion-amount: 94%;
+}

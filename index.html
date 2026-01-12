@@ -1,59 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mailer by Axioma</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Удалена строка с Font Awesome -->
+    <script src="js/init.js"></script>
 </head>
-<body>
-    <!-- Удален SVG Sprite, так как будем использовать отдельные файлы -->
 
+<body>
     <!-- Video Header -->
     <header class="video-header">
         <!-- First frame (immediate load) -->
         <div class="first-frame-container">
             <picture>
-                <source 
-                    srcset="video/first-frame.webp, 
-                            video/first-frame@2x.webp 2x"
-                    type="image/webp">
-                <source 
-                    srcset="video/first-frame.jpg, 
-                            video/first-frame@2x.jpg 2x"
-                    type="image/jpeg">
-                <img 
-                    class="first-frame"
-                    src="video/first-frame.jpg" 
-                    alt=""
-                    loading="eager"
-                    decoding="sync">
+                <source srcset="video/first-frame.webp, 
+                            video/first-frame@2x.webp 2x" type="image/webp">
+                <source srcset="video/first-frame.jpg, 
+                            video/first-frame@2x.jpg 2x" type="image/jpeg">
+                <img class="first-frame" src="video/first-frame.jpg" alt="" loading="eager" decoding="sync">
             </picture>
         </div>
 
         <!-- Video for desktop -->
-        <video 
-            class="video-background desktop"
-            preload="auto"
-            muted
-            loop
-            playsinline
-            disablePictureInPicture>
+        <video class="video-background desktop" preload="auto" muted loop playsinline disablePictureInPicture>
             <source src="video/video-background-desktop.mp4" type="video/mp4">
         </video>
 
         <!-- Video for mobile -->
-        <video 
-            class="video-background mobile"
-            preload="auto"
-            muted
-            loop
-            playsinline
-            disablePictureInPicture>
+        <video class="video-background mobile" preload="auto" muted loop playsinline disablePictureInPicture>
             <source src="video/video-background-mobile.mp4" type="video/mp4">
         </video>
     </header>
@@ -63,20 +43,20 @@
         <div class="container">
             <h1 class="title">
                 <img src="icons/envelope.svg" class="icon-title" alt="">
-                Mailer by Axioma
+                <span data-i18n="title">Mailer by Axioma</span>
             </h1>
-            
-            <p class="lead">
+
+            <p class="lead" data-i18n="lead">
                 Mailer by Axioma is a Telegram-based application that helps users automate email outreach
                 by sending emails directly from their own Google accounts.
             </p>
 
-            <p>
+            <p data-i18n="app_desc">
                 The application is designed for individual users such as music producers, beatmakers,
                 and other creators who need a simple way to manage and send email campaigns.
             </p>
 
-            <p>
+            <p data-i18n="auth_desc">
                 Mailer by Axioma uses Google OAuth 2.0 and the Gmail API. Emails are sent strictly on behalf
                 of the authenticated user and only after explicit user authorization.
             </p>
@@ -85,24 +65,24 @@
 
             <h2 class="section-title">
                 <img src="icons/star.svg" class="icon-section" alt="">
-                Key Features
+                <span data-i18n="key_features">Key Features</span>
             </h2>
             <ul class="features">
                 <li>
                     <img src="icons/check.svg" class="icon-check" alt="">
-                    Send emails from your own Gmail account
+                    <span data-i18n="feature_1">Send emails from your own Gmail account</span>
                 </li>
                 <li>
                     <img src="icons/check.svg" class="icon-check" alt="">
-                    No access to incoming emails
+                    <span data-i18n="feature_2">No access to incoming emails</span>
                 </li>
                 <li>
                     <img src="icons/check.svg" class="icon-check" alt="">
-                    No reading or analysis of private messages
+                    <span data-i18n="feature_3">No reading or analysis of private messages</span>
                 </li>
                 <li>
                     <img src="icons/check.svg" class="icon-check" alt="">
-                    Recipient lists are processed temporarily and never stored
+                    <span data-i18n="feature_4">Recipient lists are processed temporarily and never stored</span>
                 </li>
             </ul>
 
@@ -110,9 +90,9 @@
 
             <h2 class="section-title">
                 <img src="icons/shield.svg" class="icon-section" alt="">
-                Privacy
+                <span data-i18n="privacy_title">Privacy</span>
             </h2>
-            <p>
+            <p data-i18n="privacy_text">
                 User privacy and data security are a top priority.
                 For detailed information about how data is accessed, used, and protected,
                 please review our Privacy Policy.
@@ -120,23 +100,22 @@
 
             <a href="privacy.html" class="privacy-link">
                 <img src="icons/document.svg" class="icon-link" alt="">
-                Privacy Policy
+                <span data-i18n="privacy_link">Privacy Policy</span>
             </a>
 
             <div class="section-divider"></div>
 
             <h2 class="section-title">
                 <img src="icons/envelope.svg" class="icon-section" alt="">
-                Contact
+                <span data-i18n="contact_title">Contact</span>
             </h2>
-            <p>
+            <p data-i18n="contact_text">
                 If you have any questions about the application or data usage,
                 you can contact us at:
             </p>
 
             <div class="contact-info">
-                <img src="icons/envelope.svg" class="icon-contact" alt="">
-                <strong>Email:</strong> support@axxxioma.space
+                <strong>Email:</strong> axxxioma.service@gmail.com
             </div>
 
             <div class="footer-divider"></div>
@@ -144,12 +123,16 @@
             <footer class="site-footer">
                 <p class="copyright">
                     <img src="icons/copyright.svg" class="icon-copyright" alt="">
-                    2024 Mailer by Axioma. All rights reserved.
+                    <span data-i18n="footer_rights">2026 Mailer by Axioma. All rights reserved.</span>
                 </p>
             </footer>
         </div>
     </main>
 
-    <script src="script.js"></script>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/invert.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

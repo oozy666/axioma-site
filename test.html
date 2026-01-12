@@ -1,152 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mailer by Axioma</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Icon Normalization Test</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+            background: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            border: 1px dashed #ccc;
+            margin-bottom: 0.5rem;
+            background: #333;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Video Header -->
-    <header class="video-header">
-        <!-- First frame (immediate load) -->
-        <div class="first-frame-container">
-            <picture>
-                <source 
-                    srcset="video/first-frame.webp, 
-                            video/first-frame@2x.webp 2x"
-                    type="image/webp">
-                <source 
-                    srcset="video/first-frame.jpg, 
-                            video/first-frame@2x.jpg 2x"
-                    type="image/jpeg">
-                <img 
-                    class="first-frame"
-                    src="video/first-frame.jpg" 
-                    alt=""
-                    loading="eager"
-                    decoding="sync">
-            </picture>
-        </div>
+    <h1>Icon Normalization Comparison</h1>
+    <div class="grid" id="iconGrid"></div>
 
-        <!-- Video for desktop -->
-        <video 
-            class="video-background desktop"
-            preload="auto"
-            muted
-            loop
-            playsinline
-            disablePictureInPicture>
-            <source src="video/video-background-desktop.mp4" type="video/mp4">
-        </video>
+    <script>
+        const icons = [
+            "arrow-left.svg", "blob.svg", "box.svg", "check.svg", "clock.svg",
+            "copyright.svg", "database.svg", "document.svg", "envelope.svg",
+            "external-link.svg", "info.svg", "lock.svg", "settings.svg",
+            "share.svg", "shield.svg", "slider.svg", "star.svg", "trash.svg", "user.svg"
+        ];
 
-        <!-- Video for mobile -->
-        <video 
-            class="video-background mobile"
-            preload="auto"
-            muted
-            loop
-            playsinline
-            disablePictureInPicture>
-            <source src="video/video-background-mobile.mp4" type="video/mp4">
-        </video>
-    </header>
+        const grid = document.getElementById('iconGrid');
 
-    <!-- Main Content -->
-    <main class="content">
-        <div class="container">
-            <h1 class="title">
-                <img src="icons/envelope.svg" class="icon-title" alt="">
-                Mailer by Axioma
-            </h1>
-            
-            <p class="lead">
-                Mailer by Axioma is a Telegram-based application that helps users automate email outreach
-                by sending emails directly from their own Google accounts.
-            </p>
+        icons.forEach(icon => {
+            const card = document.createElement('div');
+            card.className = 'card';
 
-            <p>
-                The application is designed for individual users such as music producers, beatmakers,
-                and other creators who need a simple way to manage and send email campaigns.
-            </p>
-
-            <p>
-                Mailer by Axioma uses Google OAuth 2.0 and the Gmail API. Emails are sent strictly on behalf
-                of the authenticated user and only after explicit user authorization.
-            </p>
-
-            <div class="section-divider"></div>
-
-            <h2 class="section-title">
-                <img src="icons/star.svg" class="icon-section" alt="">
-                Key Features
-            </h2>
-            <ul class="features">
-                <li>
-                    <img src="icons/check.svg" class="icon-check" alt="">
-                    Send emails from your own Gmail account
-                </li>
-                <li>
-                    <img src="icons/check.svg" class="icon-check" alt="">
-                    No access to incoming emails
-                </li>
-                <li>
-                    <img src="icons/check.svg" class="icon-check" alt="">
-                    No reading or analysis of private messages
-                </li>
-                <li>
-                    <img src="icons/check.svg" class="icon-check" alt="">
-                    Recipient lists are processed temporarily and never stored
-                </li>
-            </ul>
-
-            <div class="section-divider"></div>
-
-            <h2 class="section-title">
-                <img src="icons/shield.svg" class="icon-section" alt="">
-                Privacy
-            </h2>
-            <p>
-                User privacy and data security are a top priority.
-                For detailed information about how data is accessed, used, and protected,
-                please review our Privacy Policy.
-            </p>
-
-            <a href="/privacy.html" class="privacy-link">
-                <img src="icons/document.svg" class="icon-link" alt="">
-                Privacy Policy
-            </a>
-
-            <div class="section-divider"></div>
-
-            <h2 class="section-title">
-                <img src="icons/envelope.svg" class="icon-section" alt="">
-                Contact
-            </h2>
-            <p>
-                If you have any questions about the application or data usage,
-                you can contact us at:
-            </p>
-
-            <div class="contact-info">
-                <img src="icons/envelope.svg" class="icon-contact" alt="">
-                <strong>Email:</strong> support@axxxioma.space
-            </div>
-
-            <div class="footer-divider"></div>
-
-            <footer class="site-footer">
-                <p class="copyright">
-                    <img src="icons/copyright.svg" class="icon-copyright" alt="">
-                    2024 Mailer by Axioma. All rights reserved.
-                </p>
-            </footer>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
+            card.innerHTML = `
+                <h3>${icon}</h3>
+                <div class="comparison">
+                    <div class="col">
+                        <div class="label">Original</div>
+                        <div class="icon-container">
+                            <img src="icons/${icon}" alt="Original ${icon}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="label">Normalized</div>
+                        <div class="icon-container">
+                            <img src="icons_normalized/${icon}" alt="Normalized ${icon}">
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
 </body>
+
 </html>

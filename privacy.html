@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — Mailer by Axioma</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="js/init.js"></script>
 </head>
+
 <body>
     <main class="content">
         <div class="container">
             <a href="/" class="back-link">
                 <img src="icons/arrow-left.svg" class="icon-back" alt="">
-                Back to Home
+                <span data-i18n="back_home">Back to Home</span>
             </a>
 
             <h1 class="title">
                 <img src="icons/shield.svg" class="icon-title" alt="">
-                Privacy Policy
+                <span data-i18n="policy_title">Privacy Policy</span>
             </h1>
-            
-            <p class="policy-date">Last updated: January 2024</p>
+
+            <p class="policy-date" data-i18n="last_updated">Last updated: January 2026</p>
 
             <div class="policy-intro">
-                <p>
+                <p data-i18n="policy_intro">
                     This Privacy Policy describes how Mailer by Axioma ("the Application")
                     accesses, uses, stores, and protects user data.
                 </p>
@@ -36,9 +40,9 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/info.svg" class="icon-section" alt="">
-                    1. Application Overview
+                    <span data-i18n="section_1_title">1. Application Overview</span>
                 </h2>
-                <p>
+                <p data-i18n="section_1_text">
                     Mailer by Axioma is a Telegram-based email automation tool that allows users
                     to send emails from their own Google accounts using the Gmail API.
                 </p>
@@ -49,9 +53,9 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/database.svg" class="icon-section" alt="">
-                    2. Google User Data Accessed
+                    <span data-i18n="section_2_title">2. Google User Data Accessed</span>
                 </h2>
-                <p>
+                <p data-i18n="section_2_text">
                     The Application accesses the following Google user data via Google OAuth 2.0:
                 </p>
 
@@ -61,7 +65,7 @@
                             <img src="icons/envelope.svg" class="data-icon" alt="">
                             <strong>Gmail API (https://www.googleapis.com/auth/gmail.send)</strong>
                         </div>
-                        <p class="data-description">
+                        <p class="data-description" data-i18n="gmail_api_desc">
                             Used solely to send emails on behalf of the authenticated user.
                             The Application does not read, access, or analyze incoming emails,
                             attachments, or mailbox contents.
@@ -73,7 +77,7 @@
                             <img src="icons/document.svg" class="data-icon" alt="">
                             <strong>Google Drive API (https://www.googleapis.com/auth/drive.file)</strong>
                         </div>
-                        <p class="data-description">
+                        <p class="data-description" data-i18n="drive_api_desc">
                             Used only to access a spreadsheet file explicitly provided by the user,
                             containing email recipient addresses for an email campaign.
                             The Application does not access or analyze any other files on the user's Google Drive.
@@ -87,20 +91,22 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/user.svg" class="icon-section" alt="">
-                    3. Data Provided Directly by the User
+                    <span data-i18n="section_3_title">3. Data Provided Directly by the User</span>
                 </h2>
                 <ul class="features">
                     <li>
                         <img src="icons/check.svg" class="icon-check" alt="">
-                        <strong>Telegram user ID and username</strong>
+                        <strong data-i18n="user_id_text">Telegram user ID and username</strong>
                     </li>
                     <li>
                         <img src="icons/check.svg" class="icon-check" alt="">
-                        <strong>Email campaign content</strong> (subject and message body)
+                        <span data-i18n="campaign_content_text"><strong>Email campaign content</strong> (subject and
+                            message body)</span>
                     </li>
                     <li>
                         <img src="icons/check.svg" class="icon-check" alt="">
-                        <strong>Email recipient list</strong> (provided via a Google Spreadsheet)
+                        <span data-i18n="recipient_list_text"><strong>Email recipient list</strong> (provided via a
+                            Google Spreadsheet)</span>
                     </li>
                 </ul>
             </section>
@@ -110,26 +116,28 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/settings.svg" class="icon-section" alt="">
-                    4. How Data Is Used
+                    <span data-i18n="section_4_title">4. How Data Is Used</span>
                 </h2>
-                <p>
+                <p data-i18n="section_4_intro">
                     User data is used exclusively to provide the core functionality of the Application,
                     which is sending email campaigns on behalf of the user.
                 </p>
 
                 <ul class="features">
                     <li>
-                        <img src="icons/check.svg" class="icon-arrow" alt="">
-                        Email content is used to send messages via the Gmail API
+                        <img src="icons/check.svg" class="icon-check" alt="">
+                        <span data-i18n="use_1">Email content is used to send messages via the Gmail API</span>
                     </li>
                     <li>
-                        <img src="icons/check.svg" class="icon-arrow" alt="">
-                        Recipient lists are processed temporarily to complete a mailing campaign
+                        <img src="icons/check.svg" class="icon-check" alt="">
+                        <span data-i18n="use_2">Recipient lists are processed temporarily to complete a mailing
+                            campaign</span>
                     </li>
                     <li>
-                        <img src="icons/check.svg" class="icon-arrow" alt="">
-                        Email campaign history (subject and message body) is stored to allow users
-                        to review previous campaigns
+                        <img src="icons/check.svg" class="icon-check" alt="">
+                        <span data-i18n="use_3">Email campaign history (subject and message body) is stored to allow
+                            users
+                            to review previous campaigns</span>
                     </li>
                 </ul>
             </section>
@@ -139,9 +147,9 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/lock.svg" class="icon-section" alt="">
-                    5. Data Storage and Security
+                    <span data-i18n="section_5_title">5. Data Storage and Security</span>
                 </h2>
-                <p>
+                <p data-i18n="section_5_text">
                     OAuth access and refresh tokens are stored securely in an encrypted form
                     using industry-standard encryption methods.
                     Encryption keys are stored separately using environment variables.
@@ -151,20 +159,20 @@
                     <div class="security-item">
                         <img src="icons/clock.svg" class="security-icon" alt="">
                         <div>
-                            <strong>Temporary Processing</strong>
-                            <p>
+                            <strong data-i18n="temp_processing_title">Temporary Processing</strong>
+                            <p data-i18n="temp_processing_text">
                                 Email recipient lists are downloaded temporarily to the server only for the duration
                                 of an active mailing process and are permanently deleted immediately after the campaign
                                 is completed.
                             </p>
                         </div>
                     </div>
-                    
+
                     <div class="security-item">
                         <img src="icons/database.svg" class="security-icon" alt="">
                         <div>
-                            <strong>Secure Storage</strong>
-                            <p>
+                            <strong data-i18n="secure_storage_title">Secure Storage</strong>
+                            <p data-i18n="secure_storage_text">
                                 Email campaign history (email subject and message body) is stored in a secure database
                                 and remains stored until user data is removed.
                             </p>
@@ -178,9 +186,9 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/share.svg" class="icon-section" alt="">
-                    6. Data Sharing
+                    <span data-i18n="section_6_title">6. Data Sharing</span>
                 </h2>
-                <p>
+                <p data-i18n="section_6_text">
                     The Application does not sell, rent, or share Google user data with third parties.
                     Data is used strictly to provide the Application's functionality.
                 </p>
@@ -191,9 +199,9 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/trash.svg" class="icon-section" alt="">
-                    7. Data Retention and Deletion
+                    <span data-i18n="section_7_title">7. Data Retention and Deletion</span>
                 </h2>
-                <p>
+                <p data-i18n="section_7_text">
                     OAuth tokens remain stored until the user revokes access to the Application.
                     Users can revoke access at any time through their Google Account permissions page:
                 </p>
@@ -205,7 +213,7 @@
                     </a>
                 </div>
 
-                <p class="retention-note">
+                <p class="retention-note" data-i18n="retention_note">
                     Once access is revoked, the stored OAuth tokens become invalid and can no longer
                     be used to access Google services.
                 </p>
@@ -216,9 +224,9 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/slider.svg" class="icon-section" alt="">
-                    8. User Control
+                    <span data-i18n="section_8_title">8. User Control</span>
                 </h2>
-                <p>
+                <p data-i18n="section_8_text">
                     Users have full control over their Google account permissions and can revoke
                     the Application's access at any time through Google Account settings.
                 </p>
@@ -229,9 +237,9 @@
             <section class="policy-section">
                 <h2 class="section-title">
                     <img src="icons/envelope.svg" class="icon-section" alt="">
-                    9. Contact Information
+                    <span data-i18n="section_9_title">9. Contact Information</span>
                 </h2>
-                <p>
+                <p data-i18n="section_9_text">
                     If you have any questions about this Privacy Policy or data usage,
                     please contact:
                 </p>
@@ -241,15 +249,15 @@
                         <img src="icons/envelope.svg" class="contact-icon" alt="">
                         <div>
                             <strong>Email</strong>
-                            <p>support@axxxioma.space</p>
+                            <p>axxxioma.service@gmail.com</p>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item">
                         <img src="icons/box.svg" class="contact-icon" alt="">
                         <div>
-                            <strong>Application Name</strong>
-                            <p>Mailer by Axioma</p>
+                            <strong data-i18n="app_name_label">Application Name</strong>
+                            <p data-i18n="app_name_value">Mailer by Axioma</p>
                         </div>
                     </div>
                 </div>
@@ -260,237 +268,13 @@
             <footer class="site-footer">
                 <p class="copyright">
                     <img src="icons/copyright.svg" class="icon-copyright" alt="">
-                    2024 Mailer by Axioma. All rights reserved.
+                    <span data-i18n="footer_rights">2026 Mailer by Axioma. All rights reserved.</span>
                 </p>
             </footer>
         </div>
     </main>
-
-    <style>
-        /* Privacy Policy specific styles */
-        .policy-intro {
-            font-size: 1.125rem;
-            color: #333333;
-            margin-bottom: 3rem;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        .policy-date {
-            color: #666666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
-
-        .policy-section {
-            margin-bottom: 2rem;
-        }
-
-        .data-list {
-            display: grid;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .data-item {
-            padding: 1.5rem;
-            background: #fafafa;
-            border-left: 2px solid #000000;
-            transition: all 0.2s ease;
-        }
-
-        .data-item:hover {
-            background: #f5f5f5;
-            transform: translateX(2px);
-        }
-
-        .data-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .data-icon {
-            width: 1.1rem;
-            height: 1.1rem;
-            opacity: 0.8;
-        }
-
-        .data-description {
-            color: #444444;
-            font-weight: 300;
-            line-height: 1.6;
-            padding-left: 1.85rem;
-        }
-
-        .security-info {
-            display: grid;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .security-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1.25rem;
-            background: #fafafa;
-            border-radius: 0;
-        }
-
-        .security-icon {
-            width: 1.1rem;
-            height: 1.1rem;
-            opacity: 0.8;
-            margin-top: 0.25rem;
-        }
-
-        .permissions-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 1rem 0;
-            padding: 0.75rem 1rem;
-            background: #fafafa;
-            border: 1px solid #e0e0e0;
-            transition: all 0.2s ease;
-        }
-
-        .permissions-link:hover {
-            border-color: #000000;
-            background: #f5f5f5;
-        }
-
-        .permissions-link a {
-            color: #000000;
-            text-decoration: none;
-            font-weight: 300;
-            font-size: 0.95rem;
-        }
-
-        .link-icon {
-            width: 0.85rem;
-            height: 0.85rem;
-            opacity: 0.7;
-        }
-
-        .retention-note {
-            color: #555555;
-            font-size: 0.95rem;
-            font-style: italic;
-            margin-top: 1rem;
-            padding-left: 1rem;
-            border-left: 1px solid #e0e0e0;
-        }
-
-        .contact-details {
-            display: grid;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: #fafafa;
-            border-left: 2px solid #000000;
-        }
-
-        .contact-icon {
-            width: 1.1rem;
-            height: 1.1rem;
-            opacity: 0.8;
-        }
-
-        .contact-item strong {
-            font-weight: 400;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-item p {
-            margin: 0;
-            color: #333333;
-            font-weight: 300;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #000000;
-            text-decoration: none;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            padding: 0.5rem 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .back-link:hover {
-            opacity: 0.7;
-        }
-
-        .icon-back {
-            width: 1rem;
-            height: 1rem;
-        }
-
-        .icon-arrow {
-            width: 0.8rem;
-            height: 0.8rem;
-            margin-right: 0.5rem;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .data-item {
-                padding: 1.25rem;
-            }
-            
-            .data-description {
-                padding-left: 1rem;
-            }
-            
-            .security-item {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .permissions-link {
-                padding: 0.5rem;
-            }
-            
-            .permissions-link a {
-                font-size: 0.85rem;
-                word-break: break-all;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            .back-link,
-            .permissions-link {
-                display: none;
-            }
-            
-            .data-item,
-            .security-item,
-            .contact-item {
-                border: 1px solid #ddd;
-                page-break-inside: avoid;
-            }
-        }
-    </style>
+    <script src="js/i18n.js"></script>
+    <script src="js/invert.js"></script>
 </body>
+
 </html>
