@@ -31,7 +31,7 @@ body {
     height: 70vh;
     overflow: hidden;
     background-color: var(--color-primary);
-    clip-path: inset(15% 0 15% 0);
+    clip-path: inset(14.65% 0 14.65% 0);
 }
 
 .first-frame-container,
@@ -626,9 +626,7 @@ button:focus {
     }
 
     .legal-links .privacy-link {
-        width: fit-content;
-        min-width: 200px;
-        /* Ensure equal width for both */
+        width: 280px;
         justify-content: center;
     }
 
